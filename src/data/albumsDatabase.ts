@@ -102,7 +102,7 @@ export const ALBUMS_DATABASE: AlbumData[] = [
     youtubeId: '2s9hiKGrBQc',
     albumName: 'my anti-aircraft friend',
     year: 2023,
-    albumCover: ''
+    albumCover: 'https://img.youtube.com/vi/2s9hiKGrBQc/hqdefault.jpg'
   },
   {
     id: '11',
@@ -147,7 +147,7 @@ export const ALBUMS_DATABASE: AlbumData[] = [
     youtubeId: 's1QCL9AGbO0',
     albumName: 'Cigarettes After Sex',
     year: 2017,
-    albumCover: ''
+    albumCover: 'https://img.youtube.com/vi/s1QCL9AGbO0/hqdefault.jpg'
   },
   {
     id: '16',
@@ -174,7 +174,7 @@ export const ALBUMS_DATABASE: AlbumData[] = [
     youtubeId: '2ROnuyg_YbA',
     albumName: 'He\'s My Man',
     year: 2023,
-    albumCover: ''
+    albumCover: 'https://img.youtube.com/vi/2ROnuyg_YbA/hqdefault.jpg'
   },
   {
     id: '19',
@@ -207,7 +207,7 @@ export const ALBUMS_DATABASE: AlbumData[] = [
     id: '22',
     title: 'My Love Mine All Mine',
     artist: 'Mitski',
-    youtubeId: 'CwGbMYLjIpQ',
+    youtubeId: '4YOvL4UUgG0',
     albumName: 'The Land Is Inhospitable and So Are We',
     year: 2023,
     albumCover: ''
@@ -228,7 +228,7 @@ export const ALBUMS_DATABASE: AlbumData[] = [
     youtubeId: 'J30WzfFO6vU',
     albumName: 'Post Mortem',
     year: 2023,
-    albumCover: ''
+    albumCover: 'https://img.youtube.com/vi/J30WzfFO6vU/hqdefault.jpg'
   },
   {
     id: '25',
@@ -246,7 +246,7 @@ export const ALBUMS_DATABASE: AlbumData[] = [
     youtubeId: 'L4sbDxR22z4',
     albumName: 'Cigarettes After Sex',
     year: 2017,
-    albumCover: ''
+    albumCover: 'https://img.youtube.com/vi/L4sbDxR22z4/hqdefault.jpg'
   },
   {
     id: '27',
@@ -283,6 +283,11 @@ export const getAllAlbums = (): AlbumData[] => {
   return ALBUMS_DATABASE;
 };
 
+// Get random subset of albums
+export const getRandomAlbums = (count: number): AlbumData[] => {
+  const shuffled = [...ALBUMS_DATABASE].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+};
 // Get random subset of albums
 export const getRandomAlbums = (count: number): AlbumData[] => {
   const shuffled = [...ALBUMS_DATABASE].sort(() => Math.random() - 0.5);
